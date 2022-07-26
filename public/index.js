@@ -1,4 +1,3 @@
-//const { ConferenceContext } = require("twilio/lib/rest/insights/v1/conference")
 
 
 
@@ -89,6 +88,9 @@ const registrarse =()=>{
 
 
 
+
+
+
 let pathFoto = ''
 const upload =()=>{
   
@@ -156,6 +158,8 @@ const init = ()=>{
       document.querySelector('body').innerHTML = plantilla})
   .catch(error => alert(error))
 }
+
+
 
 
 
@@ -306,7 +310,7 @@ const getProductosCarrito = ()=>{
 
 const getUserData = ()=>{
   
-  fetch('/getUserData', {
+  fetch('/api/usuarios/getUserData', {
     method: "get",
     headers: {
       'Accept': 'application/json',

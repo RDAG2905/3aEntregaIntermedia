@@ -1,14 +1,11 @@
-
-const controller = require('../controllers/controller')
-
+const authController = require('../controllers/AuthController')
 const getMiliseconds = require('../helpers/getMiliseconds')
 
 const validateSession = (req,res,next)=>{
     try{
         let fecha = getMiliseconds()
         if (req.session.cookie.expires <= fecha) {
-            ///res.redirect(302,'/')
-            controller.getFailLogin
+            authController.failLoginController
         }else{
             req.session.cookie.expires =  new Date(getMiliseconds() + 600000)
         }
